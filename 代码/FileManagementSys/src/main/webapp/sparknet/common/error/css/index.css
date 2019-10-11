@@ -1,0 +1,52 @@
+.mid {
+	margin: 0 auto;
+}
+.errorHeader {
+	width: 268px;
+	position: relative;
+	margin-top:5%;
+}
+.errorCode {
+	font: 70px/1 "微软雅黑";
+	color: #1586de;
+	font-weight: bold;
+	text-align: center;
+	z-index: 1;
+	padding-bottom:20px;
+}
+.errorBg {
+	width: 268px;
+	height: 30px;
+	background: url(../images/bg-hill.png) no-repeat left top;
+	position: absolute;
+	left: 50%;
+	bottom: 0;
+	margin-left: -134px;
+	z-index: 2;
+}
+.errorText {
+	width: 268px;
+}
+.errorText p {
+	font: 16px "微软雅黑";
+	color: #333;
+	text-align: center;
+}
+.back {
+	width: 268px;
+	position:relative;
+}
+.back .btn-back {
+	text-decoration:none;
+	display: inline-block;
+	color: #fff;
+	font: 14px "微软雅黑";
+	background:url(../images/btn-back.png) no-repeat 10px center;
+	background-color: #f48d29;
+	padding: 5px 10px 5px 40px;
+	border-radius:3px;
+	border:1px solid #f58b25;
+	position:absolute;
+	left:50%;
+	margin-left:-60px;
+}

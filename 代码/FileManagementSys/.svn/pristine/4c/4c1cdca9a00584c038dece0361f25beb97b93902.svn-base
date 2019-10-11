@@ -1,0 +1,88 @@
+<%@ page language="java" import="cn.com.sparknet.common.bean.*"
+	contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
+<!DOCTYPE html>
+<%
+ String path = request.getContextPath();
+ String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort() + path + "/";
+%>
+<html>
+<head>
+<meta charset="utf-8">
+<title>档案信息录入</title>
+<meta name="renderer" content="webkit">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="format-detection" content="telephone=no">
+<link rel="stylesheet" href="<%=path%>/common/plugins/layui/css/layui.css" media="all" />
+<link rel="stylesheet" type="text/css" href="<%=path%>/common/css/font/iconfont.css" media="all">
+<link rel="stylesheet" href="<%=path%>/common/css/style.css"/>
+<%
+User user = (User) session.getAttribute("msaCaseSystem");
+String loginName = user.getUSER_NAME();
+String oldpwd = user.getUSER_PWD();
+String loginid = user.getUSER_ID();
+%>
+<script type="text/javascript">
+document.oncontextmenu=new Function("event.returnValue=false"); 
+document.onselectstart=new Function("event.returnValue=false");
+var loginName = '<%=loginName%>';
+var loginid='<%= loginid%>';
+function getPath()
+{
+	 return '<%=path%>';
+}
+</script>  
+</head>
+<body>
+<h3 class="breadcrumbtilte">
+  当前位置：后台管理>用户管理
+</h3>
+<div class="layui-tab-content container-fluid">
+<!--头部搜索-->
+<section class="panel panel-padding demouTable">
+      <div class="layui-row">
+	    <div class="layui-col-xs3 layui-col-md3">
+	       <div class="layui-form-item">
+	          <label class="layui-form-label" style="width:104px;">用户名/账号：</label>
+	           <div class="layui-input-block" style="margin-left: 134px;">
+	               <input class="layui-input" autocomplete="off" id="unamekeyword" name="unamekeyword" placeholder="请输入用户名/账号">
+	           </div>
+	       </div>    
+	    </div>
+	    <div class="layui-col-xs3 layui-col-md3">
+	      <div class="layui-form-item">
+	          <label class="layui-form-label" style="width:114px;">真实姓名：</label>
+	           <div class="layui-input-block" style="margin-left: 144px;">
+	               <input class="layui-input" autocomplete="off" id="unamekeyword" name="unamekeyword" placeholder="请输入真实姓名">
+	           </div>
+	       </div> 
+	    </div>
+	    <div class="layui-col-xs6 layui-col-md6">
+	        <button class="layui-btn" data-type="reload" style="margin-left:17px;"><i class="iconfont">&#xe7ff;</i> 查询</button>
+	    </div>
+	  </div>
+</section>
+
+<!--列表-->
+   <section class="panel panel-padding" style="margin-bottom:0;">
+       <div class="group-button" id="contentlisttile">
+               <span class="tableheadtile">用户列表</span>
+       </div>
+       <div class="table-list">
+		  <!-- 表格数据 -->
+		<table class="layui-table" id="udateTable" lay-filter="udateTable"></table>
+   <script type="text/html" id="ubarDemo">
+      <a class="layui-btn layui-btn-xs" lay-event="uedit">编辑</a>
+      <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="udel">删除</a>
+    </script>
+        </div>
+          
+ </section>
+ </div>
+<script type="text/javascript" src="<%=path%>/common/plugins/jquery/jquery-1.10.2.min.js" charset="utf8"></script>
+<script type="text/javascript" src="<%=path%>/common/plugins/layui/layui.js"></script>
+<script type="text/javascript" src="js/UserManageList.js"></script>
+</body>
+</html>

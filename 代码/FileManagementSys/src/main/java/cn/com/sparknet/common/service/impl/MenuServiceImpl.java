@@ -1,0 +1,52 @@
+package cn.com.sparknet.common.service.impl;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+
+import javax.annotation.Resource;
+
+import org.springframework.stereotype.Service;
+
+import cn.com.sparknet.common.dao.MenuDao;
+import cn.com.sparknet.common.service.MenuService;
+
+@Service("menuService")
+public class MenuServiceImpl implements MenuService{
+
+	@Resource
+    private MenuDao menuDao;
+	
+	public List<Map<String, Object>> getMenulist(Map<String, Object> map) {
+		List<Map<String, Object>> list = new ArrayList<Map<String, Object>>();
+        try{
+            list=menuDao.rolemenupad(map);
+        }catch(Exception e){
+            throw new RuntimeException(e.getMessage(),e);
+        }
+        return list;
+	}
+
+	public List<Map<String, Object>> getMenulistChildren(Map<String, Object> map) {
+		List<Map<String, Object>> list = new ArrayList<Map<String, Object>>();
+        try{
+            list=menuDao.rolemenuChildren(map);
+        }catch(Exception e){
+            throw new RuntimeException(e.getMessage(),e);
+        }
+        return list;
+	}
+
+	@Override
+	public List<Map<String, Object>> getMenuBtnlist(Map<String, Object> map) {
+		List<Map<String, Object>> list = new ArrayList<Map<String, Object>>();
+        try{
+            list=menuDao.MenuBtnlist(map);
+        }catch(Exception e){
+            throw new RuntimeException(e.getMessage(),e);
+        }
+        return list;
+	}
+	
+
+}

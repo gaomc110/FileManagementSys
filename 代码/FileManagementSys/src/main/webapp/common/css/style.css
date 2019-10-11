@@ -1,0 +1,360 @@
+@charset "utf-8";
+/* gaomingcong*/
+/*padding*/
+body{
+	    background-color: #fff;
+}
+.padTop30{ padding-top:30px}
+.padTop5{ padding-top:5px}
+.padTop10{ padding-top:10px}
+.padTop8{ padding-top:8px}
+.padTop15{ padding-top:15px}
+.padTop20{ padding-top:20px}
+.padLeft196{ padding-left:196px}
+.padLeft90{ padding-left:90px}
+.padLeft30{ padding-left:30px}
+.padLeft10{ padding-left:10px}
+.padBottom12{ padding-bottom:12px}
+.padBottom22{ padding-bottom:22px}
+.padBottom10{ padding-bottom:10px}
+.padBottom5{ padding-bottom:5px}
+.padBottom8{ padding-bottom:8px}
+.parLeft60{ padding-left:60px}
+.parLeft65{ padding-left:65px}
+.parLeft10{ padding-left:10px}
+.parLeft32{ padding-left:32px}
+.parLeft12{ padding-left:12px}
+.parRight15{ padding-right:15px}
+.parRight10{ padding-right:10px}
+.parRight25{ padding-right:25px}
+.parLeft25{ padding-left:25px}
+.parLeft53{ padding-left:53px}
+.padding3{ padding:3px 0px}
+.padding328{ padding:3px 28px}
+.padding4{ padding:4px 0px}
+.padding5{ padding:5px 0px}
+.padding210{ padding:2px 10px}
+.padding15{ padding:0px 15px}
+.padding10{ padding:10px 0px}
+.parLR10{ padding:0px 10px}
+.parLR5{ padding:0px 5px}
+.padding9{padding:10px}
+.padding25{ padding:25px}
+.padding50{ padding:50px 0px}
+.padding20{ padding:20px 0px}
+.padding10_0_0{ padding:10px 0px 0px}
+.padding1220{ padding:12px 20px}
+.padding2050{ padding:20px 50px}
+.padding2005{ padding:20px 0px 5px;}
+.padding{padding:0;}
+/*bgcolor*/
+.bG247080{ background:#247080}
+.bG3a7d8d{ background:#3a7d8d}
+.bG9dbfc8{ background:#9dbfc8}
+.bG176A75{ background:#176A75}
+.bG6ea0ab{ background:#6ea0ab}
+.bG3b7f8f{ background:#3b7f8f}
+.bG0B6072{ background:#0B6072}
+.bG66C61C{ background:#66C61C}
+.bGeee{ background:#eee}
+.bc3c3c3{ background:#c3c3c3}
+.bgBlue01{ background:#0b6074}
+.bgBlue02{ background:#247080}
+.bgBlue03{ background:#3a7e8b}
+.bgBlue04{ background:#55909e}
+.bgBlue05{ background:#6ea0ab}
+.bgBlue06{ background:#84afb6}
+.bgBlue07{ background:#9ebfc8}
+.bgBlue08{ background:#b6cfd4}
+.bgBlue09{ background:#C7D9DD}
+.bgBlue10{ background:#EFF7F8}
+.bgGreen01{ background:#66c61c}
+.bgGreen02{ background:#77cc33}
+.bgGreen03{ background:#85d14a}
+.bgGreen04{ background:#93d760}
+.bgGreen05{ background:#a3dd77}
+.bgGreen06{ background:#b2e28e}
+.bgGreen07{ background:#c3e8a3}
+.bgGreen08{ background:#e1f5d2}
+.background{ background:none}
+.bgYe01{ background:#ffaa01}
+.bgYe02{ background:#ffb21a}
+.bgYe03{ background:#ffbd2e}
+.bgYe04{ background:#fcc64a}
+.bgYe05{ background:#ffcc64}
+.bgYe06{ background:#fed47e}
+.bgYe07{ background:#ffdc9a}
+.bgYe08{ background:#feeecc}
+.bgGreen{ background:#68c61a}
+.bgYe{ background:#fc920b}
+.bgBl{ background:#085e77}
+.bgGrey01{ background:#f5f5f5}
+.bgf5efeb{background: #f5efeb;}
+/*bgimg*/
+.bgyeimg{ background:url(../images/items2.png) no-repeat;}
+.bgBlimg{ background:url(../images/items3.png)}
+.bgJian{ background:url(../images/q-icon.png) no-repeat 0px 9px; display:block; width:15px; height:25px; float:left}
+/*color*/
+.blue01{ color:#0B6072}
+.blue02{ color:#0B6072}
+.green01{ color:#66C61C}
+.yeColor01{ color:#FF9100}
+.colorc7c7c7{color:#c7c7c7}
+.color474747{color:#474747}
+.color66C61C{color:#66C61C}
+.color999{color:#999}
+.color5D5D5D{color:#5D5D5D}
+.colorF00{ color:#F00}
+.colorFFF{ color:#fff}
+.color333{ color:#333}
+.color666{ color:#666}
+.color46bd01{ color:#46bd01}
+.color1E9FFF{ color:#1E9FFF}
+.colorf08726{color:#f08726}
+/*margin*/
+.marRight16{margin-right:16px}
+.marRight40{margin-right:40px}
+
+.marauto{ margin:auto}
+.mar0auto{ margin:0 auto}
+.marTop40{ margin-top:40px}
+.marleft0{ margin-left:0px}
+.marleft20{ margin-left:20px}
+.marleft100{ margin-left:100px}
+.marright20{ margin-right:20px}
+.marRight5{ margin-right:5px}
+.marTop22 { margin-top:22px}
+.marTop30 { margin-top:30px}
+.marTop70 { margin-top:70px}
+.marTop10{ margin-top:10px}
+.marBottom{ margin-bottom:0;}
+.marBottom28{ margin-bottom:28px}
+.marBottom40{ margin-bottom:40px}
+.marBottom5{ margin-bottom:5px}
+.marBottom10{ margin-bottom:10px}
+.marRight12{ margin-right:12px}
+.marRight10{ margin-right:10px}
+.parRight120{ margin-right:120px}
+.marleft10{ margin-left:10px}
+.marleft50{ margin-left:50px}
+.marleft80{ margin-left:80px}
+.marleft100{ margin-left:100px}
+.marleft150{ margin-left:150px}
+.marTop15{ margin-top:15px}
+.margin7{ margin:7px}
+.margin10{ margin:10px}
+.margin20{ margin:20px}
+.margin21{ margin:20px 0px 0px 20px}
+.margin40{ margin:0px 40px}
+.margin10auto{ margin:10px auto}
+.margin0{margin:0;}
+.margin100auto{margin:100px auto;}
+/*width*/
+.minWidth1200{ min-width:1200px}
+.width1200{ width:1200px}
+.width940{ width:940px}
+.width161{ width:161px}
+.width140{ width:140px}
+.width671{ width:671px}
+.width96{ width:96px}
+.width180{ width:180px}
+.width239{ width:239px}
+.width280{ width:280px}
+.width300{ width:300px}
+.width340{ width:340px}
+.width350{ width:350px}
+.width360{ width:360px}
+.width380{ width:460px;padding-bottom:30px;}
+.width280{ width:280px}
+.width290{ width:290px}
+.width260{ width:260px}
+.width500{ width:500px}
+.width649{ width:649px}
+.width620{ width:620px}
+.width700{ width:700px}
+.width780{ width:780px}
+.width750{ width:750px}
+.width560{ width:560px}
+.width660{ width:660px}
+.width420{ width:420px}
+.width400{ width:400px}
+.width470{ width:470px}
+.width900{ width:900px}
+.width820{ width:820px}
+.width850{ width:850px}
+.width860{ width:860px}
+.width880{ width:880px}
+.width800{ width:800px}
+.width80{ width:80px}
+.width75{ width:75px}
+.width100{ width:100px}
+.width150{ width:150px}
+.width155{ width:155px}
+.width20{ width:20px}
+.width40{ width:40px}
+.width543{ width:543px}
+.width325{ width:325px}
+.width300{ width:300px}
+.width315{ width:315px}
+/*height*/
+.height20{ height:20px}
+.height30{ height:30px}
+.height32{ height:32px}
+.height35{ height:35px}
+.height39{ height:39px}
+.height40{ height:40px}
+.height50{ height:50px}
+.height22{ height:22px}
+.height120{ height:120px}
+.height130{ height:130px}
+.height140{ height:140px}
+.height150{ height:150px}
+.height160{ height:160px}
+.height180{ height:180px}
+.height200{ height:200px}
+.height240{ height:240px}
+.height280{ height:280px}
+.height350{ height:350px}
+.height550{ height:550px}
+.height600{ height:600px}
+.height650{ height:650px}
+.height700{ height:700px}
+.height750{ height:750px}
+.height450{ height:450px}
+.minHeight{min-height:350px;_height:350px;}
+.minHeight50{min-height:50px;}
+.height60{ height:60px}
+.lineheight{line-height:24px;}
+.lineheight20{line-height:20px;}
+.lineheight50{line-height:50px;}
+.lineheight150{line-height:150px;}
+.lineheight35{line-height:35px;}
+.lineheight32{line-height:32px;}
+/**/
+.left{float:left; display:block;display:inline}
+.right{float:right; display:block;}
+ .find{display:none;}
+ .fl{ float:left;}
+.fr{ float:right;}
+.displayinline{display:inline-block}
+.inlinedisplay{display:inline-block}
+.display{display:block}
+.textindent{ text-indent:2em}
+.center{ text-align:center;}
+.text-right{text-align:right;}
+.text-left{text-align:left;}
+.hidden{ overflow:hidden}
+.cursor{cursor:pointer;}
+.ellipsis{text-overflow:ellipsis;}
+.nowrap{white-space:nowrap;}
+/*border*/
+.borderLine01{ font-size:1px; border-bottom:1px solid #e5e5e5}
+.borderLine02{ border-bottom:1px solid #66C61C; display: inline-block}
+.border{border:1px #66C61C solid}
+.bordernone{border:1px #66C61C solid}
+.borderccc{border:1px #ccc solid}
+.border1{border:1px #ddd solid}
+.borderradius{ border-radius:4px;}
+.bordertop{ border-top:1px #66C61C solid}
+.borderbottom{ border-bottom:1px #0B6072 solid}
+.borderbottom1{ border-bottom:1px #66C61C solid}
+.borderbottom2{ border-bottom:1px #ddd solid;}
+.borderbottom3{ border-bottom:1px #333 solid;}
+/*shadow*/
+.box-shadow{box-shadow:0px 0px 10px #888888;}
+.overflow{overflow:auto;}
+/*fontsize*/
+.fontsize24{ font-size:24px}
+.fontsize15{ font-size:15px}
+.fontsize21{ font-size:21px}
+.fontsize26{ font-size:26px}
+.fontsize18{ font-size:18px}
+.fontsize16{ font-size:16px}
+.fontsize14{ font-size:14px}
+.fontsize12{ font-size:12px}
+.fontsize30{ font-size:30px}
+.fontsize36{ font-size:36px}
+.fontsize40{ font-size:40px}
+.fontsize80{ font-size:80px}
+/*fontweight*/
+.fontweight{ font-weight:bold}
+/*icon
+.icon1{background:url(../images/icon.png) no-repeat 4px 0px}*/
+
+.boxouter:after{ 
+     content: ".";
+     display: block;
+     height: 0px;
+     clear: both;
+     visibility: hidden; 
+} 
+
+
+/*---滚动条默认显示样式--*/  
+::-webkit-scrollbar-thumb{  
+   background-color:#9b9c9e;  
+   height:50px;  
+   outline-offset:-2px;  
+   outline:2px solid #fff;  
+   -webkit-border-radius:4px;  
+   border: 2px solid #fff;  
+}
+/*---鼠标点击滚动条显示样式--*/  
+::-webkit-scrollbar-thumb:hover{  
+   background-color:#009688;  
+   height:50px;  
+   -webkit-border-radius:4px;  
+}
+/*---滚动条大小--*/  
+::-webkit-scrollbar{  
+   width:12px;  
+   height:12px;  
+}
+/*---滚动框背景样式--*/  
+::-webkit-scrollbar-track-piece{  
+   background-color:#fff;  
+   -webkit-border-radius:0;  
+}
+/*滚动条的上下两端的按钮*/
+::-webkit-scrollbar-button{
+    /* height: 12px;
+    background-color: #333 */;
+}
+
+
+/*提示框*/
+body .demo-class1,body .demo-class2{border: none; height:220px; width: 400px !important;}
+body .demo-class5,body .demo-class6{border: none; height:274px; width: 400px !important;}
+body .demo-class,body .demo-class3{border: none; height:220px; width: 402px !important;}
+body .demo-class .layui-layer-content {background: url(../../common/images/error.png) no-repeat 164px 28px;height: 160px;padding: 0;}
+body .demo-class3 .layui-layer-content {background: url(../../common/images/success.png) no-repeat 164px 28px;height: 160px;padding: 0;}
+body .demo-class .layui-layer-content  h3{font-size: 22px;text-align: center;padding:118px 0 0 0;font-weight: bold;color: #f08726;}
+body .demo-class3 .layui-layer-content h3{font-size: 22px;text-align: center;padding:118px 0 0 0;font-weight: bold;color: #6fc46a;}
+
+
+body .demo-class1 .layui-layer-content,body .demo-class2 .layui-layer-content{    height: 70px;font-size: 16px;padding: 0 50px;    margin-top: 28px;}
+body .demo-class .layui-layer-title,body .demo-class1 .layui-layer-title,body .demo-class2 .layui-layer-title,body .demo-class3 .layui-layer-title,body .demo-class5 .layui-layer-title,body .demo-class6 .layui-layer-title{font-size:18px;    background-color: #f5efeb;color:#937a6a;line-height: 60px;height:60px;border:0 none; }
+body .demo-class1 .layui-layer-content p,body .demo-class2 .layui-layer-content p{text-align: center;} 
+body .demo-class5 .layui-layer-content{background: url(../../common/images/error.png) no-repeat 160px 28px;height: 214px;padding: 0;font-size: 16px;}
+body .demo-class6 .layui-layer-content{background: url(../../common/images/success.png) no-repeat 160px 28px;height: 214px;padding: 0;font-size: 16px;}
+body .demo-class5 .layui-layer-content h3{font-size: 22px;text-align: center;padding:120px 0 10px 0;    font-weight: bold;color: #f08726;}
+body .demo-class6 .layui-layer-content h3{font-size: 22px;text-align: center;padding:120px 0 10px 0;    font-weight: bold;color: #6fc46a;}
+body .demo-class5 .layui-layer-content p,body .demo-class6 .layui-layer-content p{text-align: center;}
+
+
+
+body .demo-class1 .layui-layer-btn,body .demo-class2 .layui-layer-btn{position: absolute;left: 55px;padding: 0;top: 160px;}	
+body .demo-class .layui-layer-btn,body .demo-class3 .layui-layer-btn{position: absolute;left: 175px;padding: 0;top: 230px;}
+body .demo-class5 .layui-layer-btn,body .demo-class6 .layui-layer-btn{position: absolute;left: 175px;padding: 0;top: 230px;}
+
+body .demo-class .layui-layer-btn a,body .demo-class2 .layui-layer-btn a,body .demo-class3 .layui-layer-btn a,body .demo-class5 .layui-layer-btn a,body .demo-class6 .layui-layer-btn a {
+    background: #6fc46a;border: 1px solid #6fc46a;    width: 80px; height: 34px;    line-height: 34px;text-align: center;padding: 0;font-size: 16px;color:#fff;}
+body .demo-class1 .layui-layer-btn a{background: #f08726; border: 1px solid #f08726;    width: 80px; height:34px;    line-height: 34px;text-align: center;padding: 0;font-size: 16px;color:#fff;}
+body .demo-class1 .layui-layer-btn .layui-layer-btn1,body .demo-class2 .layui-layer-btn .layui-layer-btn1,body .demo-class6 .layui-layer-btn .layui-layer-btn1 {
+    background: #e6e6e6;border:0 none;width: 80px; height: 34px; margin-left: 112px;   line-height: 34px;font-size: 16px;color:#333333;text-align: center;padding: 0;}
+
+
+h3.breadcrumbtilte{background: #f6f6f6;font-size: 14px;height: 40px;line-height: 40px;color:#937a6a;}
+.tableheadtile{ float: left;color:#d9711e;font-size: 18px;padding-top: 8px;font-weight: bold}
+
+.layui-table thead tr{background-color: #f5efeb;color:#937a6a;}

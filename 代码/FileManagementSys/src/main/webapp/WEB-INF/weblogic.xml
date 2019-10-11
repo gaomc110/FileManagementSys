@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE weblogic-web-app PUBLIC "-//BEA Systems, Inc.//DTD Web Application 8.1//EN" "http://www.bea.com/servers/wls810/dtd/weblogic810-web-jar.dtd">
+<weblogic-web-app>
+	<!-- 定义Session名称，防止相同域下Session失效问题 -->
+	<session-descriptor>
+		<cookie-name>JSESSIONID_SPARKNET</cookie-name>
+    <!--  解决会话cookie中缺少HttpOnly属性漏洞 --> 
+  <cookie-http-only>true</cookie-http-only> 
+	</session-descriptor>
+	<!-- 定义字符集编码 -->
+	<charset-params>
+		<input-charset>
+			<resource-path>/*</resource-path>
+			<java-charset-name>UTF-8</java-charset-name>
+		</input-charset>
+	</charset-params>
+	<!-- 优先加载应用中的jar包 -->
+	<container-descriptor>
+		<prefer-application-packages>
+     <package-name>org.apache.commons.lang.*</package-name>
+      <package-name>org.apache.xmlbeans.*</package-name>
+			<package-name>javax.persistence.*</package-name>
+		</prefer-application-packages>
+	</container-descriptor>
+	<!--处理weblogic环境下导入Excel数据量过大的问题-->
+	  <container-descriptor> 
+	    <prefer-web-inf-classes>true</prefer-web-inf-classes> 
+	  </container-descriptor>
+</weblogic-web-app> 

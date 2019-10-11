@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+           http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd
+           http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.3.xsd">
+
+	<!--删除临时目录 -->
+	<bean id="deleteTempDirectory" class="cn.com.sparknet.common.task.DeleteTempDirectory"></bean>
+	<bean id="deleteTempDirectorySchedulerFactory" class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+		<property name="autoStartup">
+			<value>true</value>
+		</property>
+		<property name="triggers">
+			<list>
+				<ref bean="deleteTempDirectoryCronTrigger" />
+			</list>
+		</property>
+	</bean>
+	<bean id="deleteTempDirectoryScheduledJobDetailFactory" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject">
+			<ref bean="deleteTempDirectory" />
+		</property>
+		<property name="targetMethod">
+			<value>execute</value>
+		</property>
+	</bean>
+	<bean id="deleteTempDirectoryCronTrigger" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+		<property name="jobDetail">
+			<ref bean="deleteTempDirectoryScheduledJobDetailFactory" />
+		</property>
+		<property name="cronExpression">
+			<!-- 每月最后一天的23:00触发 -->
+			<value>0 0 23 L * ?</value>
+		</property>
+	</bean>
+
+</beans>

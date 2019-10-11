@@ -1,0 +1,166 @@
+<%@ page language="java" import="cn.com.sparknet.common.util.StringUtil"
+	contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
+<!DOCTYPE html>
+<%
+  String path = request.getContextPath();
+  String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort() + path + "/";
+  String errorinfo = StringUtil.nullToEmpty((String) session.getAttribute("errorinfo"));
+%>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8">
+<meta name="renderer" content="webkit">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta http-equiv="Cache-Control" content="no-cache, no-store">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<title>扫描</title>
+<meta name="keywords" content="">
+<meta name="description" content="">
+<script type="text/javascript" src="<%=path%>/common/plugins/jquery/jquery.min.js"></script>
+<script src="<%=path%>/common/js/TScan.min.js"></script>
+    <script>
+    function getPath()
+    {
+        return '<%=path%>';
+    }
+    //https://blog.csdn.net/ldevs/article/details/9837149
+    //http://d.iyanhong.com/demos/FileScan.aspx
+        var objTScan = new TScan();
+        /* var scan_mode = 0;   //扫描方式
+        var EwmSb = false    //是否识别二维码，一张图片只能识别一个二维码或条码
+        var scanidx = 1;
+	var sn="7101def779bd00413ac4572317bd17f30423efa20cfc07710fd246d7269fa4fbe4f79defdd6fee0aae29a9fc378ca76e7ee42a8ca25f6250eca67635c0ae4f673856da3e3adc5afb";
+
+        objTScan.OnDataIn = function (dat) {
+            if (dat.STAT == 2) {
+                if (dat.QRCODE != "") alert("二维码识别结果:" + dat.QRCODE);
+
+                //上传图像
+                if (dat.CIMG != "") { //摄像头抓拍启用识别二维码时不返回图像
+                    //添加到列表
+                    $("#scanFileList").append("<div id='f_" + scanidx + "' style='width:80px;height:100px;margin-left:2px;float:left;border:solid 1px #ccc;'><a href='' target='_blank'><img src='' border=0 width='80' height='100' /></a></div>");
+                    //上传图像
+                    $.post("fileup.aspx", { img: dat.CIMG, id: scanidx }, function (dat2) {
+                        $("#f_" + dat2.id + " img").attr("src", dat2.src);
+                        $("#f_" + dat2.id + " a").attr("href", dat2.src);
+                    }, "json");
+                }
+                scanidx++;
+                if (dat.ACT == 2 && dat.TSTAT > 5) {       //连续扫描，继续扫描下一张
+                    objTScan.Scan({
+                        MODE: 2,
+                        QRCODE: EwmSb
+                    })
+                }
+            } else if (dat.STAT == 3) {
+                //用户取消操作
+
+            } else if (dat.STAT == -1) {
+                //扫描仪扫描失败
+
+            }
+        } */
+        
+        function select() { //选择扫描仪
+            objTScan.Register(sn, function (dat) {
+                if (dat.STAT == 11) {
+                    objTScan.SelectScanner();
+                }
+            });
+        }
+
+        function scan() {
+            $.ajax({
+       	     type: 'POST',
+       	     url: getPath()+"/ScanController/getScanpng.do" ,
+       	     data:{"datatime":$("#datatime").val(),"datapch":$("#datapch").val(),"datazs":$("#datazs").val(),"scanerlist":$("#scanerlist").val()},
+       	     success:function(data){
+       	    	 console.log(data);
+       	    	 $.each(data,function(idx,obj){
+       	    		$("#scanFileList").append("<img src='"+obj+idx+"' alt='"+idx+"' width='200px' >");
+       	    	}); 
+	       	  }
+	       	});
+            
+            
+            /* objTScan.Register(sn, function (dat) {
+                if (dat.STAT == 11) {
+                    objTScan.Scan({
+                        MODE: scan_mode,    //1单张扫描 2连续扫描 3摄像头抓拍
+                        QRCODE: EwmSb,   //是否识别图片中的条码或二维码 摄像头抓拍时不返回图像
+                        SSET: $("#cbo_ss").is(":checked"),
+			RESOLUTION:200,
+			SSI:$("#scanerlist").val()
+                    });
+                }
+
+                if (dat.STAT == -99) {
+                    if (confirm("您还没有安装扫描插件\n\n现在下载安装吗？")) {
+                        location = "http://d.iyanhong.com/files/TScan.exe";
+                    }
+                }
+
+                if (dat.STAT == 12) {
+                    alert("注册失败！");
+                }
+            }); */
+        }
+
+	function dispose() {
+            objTScan.dispose();
+        }
+
+        $(function () {
+        	//初始化获取可用扫描仪列表
+        	$.ajax({
+        	     type: 'POST',
+        	     url: getPath()+"/ScanController/getslist.do" ,
+        	     data:{},
+        	     success:function(data){
+        	    	 if(data.msg=="ok"){
+        	    		   $(data.datascan).each(function (i,obj) {
+                              $("#scanerlist").append($("<option value='" + obj + "'>" + obj + "</option>"));
+                            }) 
+        	    	 }else{
+        	    		 alert(data.msg);
+        	    	 }
+        	    	   
+        	    }
+        	});
+        	
+        	//获取可用扫描仪列表
+            /* objTScan.Register(sn, function (dat1) {
+                if (dat1.STAT == 11) {
+                    objTScan.getSourceList(function (dat2) {
+                        $(dat2.SLIST).each(function (i) {
+                            $("#scanerlist").append($("<option value='" + i + "'>" + dat2.SLIST[i] + "</option>"));
+                        })
+                    });
+                }
+            }); */
+        })
+    </script>
+</head>
+<body>
+    <div id="scanFileList" style="height:300px; overflow:auto;">
+       
+    </div>
+    日期：<input type="text" id="datatime" value="2019-07-11">
+    批次号：<input type="text" id="datapch" value="1">
+    张数：<input type="text" id="datazs" value="1">
+    <br>
+    <input type="radio" name="cbo_scantype" value="1" checked="checked" id="cbo_1" /><label for="cbo_1">扫描</label>
+    <br>
+    <select id="scanerlist" style=''>
+        <option value="">请选择扫描仪</option>
+    </select>
+    <br><br>
+    <a href="javascript:scan();" style="text-decoration:none;color:blue;border:solid 1px #ccc;padding:5px;">扫描</a>
+    <a href="javascript:dispose();" style="text-decoration:none;color:blue;border:solid 1px #ccc;padding:5px;">关闭</a>
+    <a href="javascript:select();" style="text-decoration:none;color:blue;border:solid 1px #ccc;padding:5px;display:none1;">选择扫描仪</a>
+<br />
+<br /><a href="/files/TScan.exe">安装包下载地址</a>
+</body>
+</html>
